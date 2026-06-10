@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+<div class="container-fluid bg-danger">
+    <div class="row p-5">
+        <div class="col-6 text-white d-flex align-items-center">
+            <div class="ms-5 ps-5">
+                <h1 class="display-3 mb-4">Explore the wonderland of tastes!</h1>
+                <p class="text-white mb-4">Assignment for HCI Exam in September 2024</p>
+                <div class="d-flex gap-5">
+                    <a class="btn bg-white">Get Started</a>
+                    <a class="btn btn-outline-light text-white">Learn More</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-6 d-flex justify-content-center">
+            <img src="{% static 'images/cake.jpg' %}" width="800px" height="500px">
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-secondary-subtle pt-5 pb-5">
+    <div class="row d-flex justify-content-center mb-5">
+        <div class="col-5">
+            <p class="fs-4 text-center">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae deleniti
+                dignissimos eaque hic mollitia
+                obcaecati qui quos sit voluptatum. Consequuntur, officiis, quibusdam? Dolor eligendi error et, inventore
+                magni
+                modi nihil"</p>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-5">
+            <p class="text-center fw-bold">John Doe / CEO, Cakery&Backery</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="container pt-5 mt-5 mb-5">
+    <h1 class="display-6 fw-bold text-center text-danger">Products</h1>
+    <p class="fs-5 text-center text-secondary">Add more products in the edit form!</p>
+
+    <div class="row mt-5">
+        {% for cake in cakes %}
+        <div class="col-4 d-flex justify-content-center mb-4">
+            <div class="card shadow">
+                <img src="{{cake.picture.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{cake.name}}</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium debitis dicta ducimus error est, eum illo inventore molestiae mollitia nihil numquam odit, omnis placeat quas, quo totam ut vel voluptas.</p>
+                    <div class="row d-flex justify-content-start">
+                        <div class="col-3">
+                            <img src="{% static 'images/person1.jpg' %}" class="rounded-pill">
+                        </div>
+                        <div class="col-7 d-flex align-items-center">{{cake.baker.name}} {{cake.baker.surname}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
