@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container mt-5">
+
+        <div class="row">
+            <div class="col-6 d-flex justify-content-center align-items-center">
+                <div class="">
+                    <h1 class="poppins-light">Architecture</h1>
+                    <h1 class="text-body-tertiary poppins-light">Bureau</h1>
+                </div>
+            </div>
+            <div class="col-6">
+                <img src="{% static 'images/house3.jpg' %}"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-6">
+                <img src="{% static 'images/house4.jpg' %}" alt="">
+            </div>
+            <div class="col-6 d-flex justify-content-center align-items-center">
+                <div class="">
+                    <p class="mp-5 p-5 fs-5 text-body-tertiary poppins-light">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing
+                        elit.
+                        At distinctio id praesentium quas,
+                        recusandae rem reprehenderit sunt veniam! Dignissimos dolorum eum inventore laudantium nesciunt
+                        officia perspiciatis quidem sint sunt vero.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <div class="container mt-5 pt-5">
+    <h1 class="text-center mb-5 poppins-light">
+        We offer a variety of projects
+    </h1>
+
+    <div class="row">
+        {% for p in properties %}
+            <div class="col-md-4 mb-4">
+                <div class="card rounded-0 h-100">
+
+                    <img src="{{ p.url }}" class="card-img-top rounded-0" alt="">
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ p.name }}</h5>
+
+                        <div class="row">
+                            <div class="col-6 poppins-light">Area</div>
+                            <div class="col-6 text-end poppins-light">{{ p.area }} m2</div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-6">Price</div>
+                            <div class="col-6 text-end">{{ p.price }}</div>
+                        </div>
+
+                        <a href="{% url 'edit' id=p.id %}"
+                           class="btn btn-dark rounded-0 mt-4">
+                            Edit
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
