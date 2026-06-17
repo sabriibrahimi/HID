@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid">
+        <h1 class="mt-5 text-center">OUR SERVICES</h1>
+        <div class="row d-flex justify-content-center">
+            <div class="col-5">
+                <p class="text-secondary text-center ">Our professionalism will perform diagnostic tests, fluid flush
+                    and
+                    fills, engine replacement, oil changes and
+                    total vehicle overhauls.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <h1 class="mt-5 text-center">OUR GALLERY</h1>
+        <div class="row d-flex justify-content-center mt-4">
+            <div class="col-5">
+                <p class="text-secondary text-center ">Our professionalism will perform diagnostic tests, fluid flush
+                    and
+                    fills, engine replacement, oil changes and
+                    total vehicle overhauls.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-4 d-flex justify-content-center">
+                <img src="{% static 'images/other2.jpg' %}">
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+                <img src="{% static 'images/other3.jpg' %}">
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+                <img src="{% static 'images/other4.jpg' %}">
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 justify-content-center d-flex">
+        <a class="btn bg-secondary-subtle px-5 py-3 fw-bold text-center">SEE FULL GALLERY</a>
+    </div>
+
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-6 justify-content-center gap-3">
+                <img src="{% static 'images/other5.jpg' %}">
+                <img src="{% static 'images/other6.jpg' %}">
+            </div>
+
+            <div class="col-6">
+                <h1 class="display-6 text-uppercase fw-bold">Long term warranties and competitive prices</h1>
+                <p class="mt-4">Why do we consider ourselves to be the best car garage? It’s simple, really. We know
+                    that honesty and
+                    transparency, coupled with reliable and friendly customer service, is what really builds customer
+                    trust.</p>
+
+                <p class="mt-4">Trust the experts at our AutoService Shop for quality tune-ups. Our professionals will
+                    perform diagnostic
+                    tests, fluid flush and fills, engine replacement, oil changes, and total vehicle overhauls. We offer
+                    competitive.</p>
+
+                <a class="btn bg-primary text-white px-5 py-3 fw-bold text-center mt-4">SEE ALL OUR PROFITS</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

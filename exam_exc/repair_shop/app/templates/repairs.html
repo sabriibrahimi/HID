@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% if messages %}
+<script>
+    {% for message in messages %}
+        alert("{{ message|escapejs }}");
+    {% endfor %}
+</script>
+{% endif %}
+
+<div class="container mt-5">
+    <div class="row">
+        {% for r in repairs %}
+        <div class="col-4 mt-5">
+            <div class="card bg-dark text-white">
+                <img src="{% if r.image %}{{r.image.url}} {% else %} # {% endif%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{r.code}}</h5>
+                    <h6 class="text-secondary">{{r.car.car_type}}</h6>
+                    <p class="card-text">{{r.problem_description}}</p>
+                    <a href="#" class="btn btn-outline-danger">Fix</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+<div class="container mt-5 mb-5">
+    <form method="post" action="{% url 'repairs' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
